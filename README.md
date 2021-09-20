@@ -1,6 +1,6 @@
 # c6
 
-Workflow to extract marker motion in 2D from video recordings using DeepLabCut.
+Workflow to extract 2D marker motion from video recordings using DeepLabCut.
 
 First, some notes on installation, usage, and hardware.
 
@@ -24,11 +24,13 @@ Once you're done, copy the project to your cluster:
 STEP 2
 Train the neural net. This is the most time-consuming part. It should take a day at least on a computecanada node or multiple days on your own computer. (I haven't evaluated its performance wrt training time and different machines thoroughly. It was at least 10x faster on Graham relative to my laptop.) In graham.computecanada.ca, send the training as a job with:
 > sbatch step_2_train.sh
+
 Important parameters inside, such as how long to run the training. You need to edit this script to hard-code the project folder path by changing the address in:
 cd ~/project/def-ljt/dobri2/dodo_sample2/stepclap-2021-09-20/
 
 STEP 3
 Analyze and automatically label the full videos:
 > sbatch step_3_analyze_and_label.sh
+
 This is not super time-consuming but it seems to require a good amount of memory. Similar to the previous, pay attention to the details inside the script, such as the project folder:
 cd ~/project/def-ljt/dobri2/dodo_sample2/stepclap-2021-09-20/
