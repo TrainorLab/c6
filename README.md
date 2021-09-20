@@ -12,7 +12,7 @@ Another, smallish, difficulty was to have GUI working on Ubuntu. There's an appa
 
 If you just need to install the deeplabcut module in your python environment then you don't need to clone the rep. If you want to practice by running the examples, start by cloning the repository, git clone https://github.com/DeepLabCut/DeepLabCut.git, and then look inside their 'examples' folder.
 
-To get this set of scripts on your machine, clone this repo with:
+To get this set of scripts on your machine, it's easy to download the zip file or clone this repo over ssh:
 >git clone git@github.com:TrainorLab/c6
 
 To do that, you will need to authenticate with an ssh key, or use a client. For the ssh, check https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
