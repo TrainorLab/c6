@@ -1,0 +1,15 @@
+To get deeplabcut running on my updated Win 10 machine, I had to install the following.
+
+- nvidia 460 driver. The most recent for my GPU (NVIDIA GeForce GTX 1050), I believe.
+- cuda 11.2
+- cudnn 8
+(including that crazy trick to manually copy-paste dlls by way of cudnn 11.3, https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html#cudnn-versions-824)
+- fresh anaconda, then made a dedicated environment DEEPLABCUT
+- python 3.8
+- tensorflow 2.6
+- deeplabcut
+
+More references:
+https://www.tensorflow.org/install/gpu
+https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html
+https://developer.nvidia.com/rdp/cudnn-archive

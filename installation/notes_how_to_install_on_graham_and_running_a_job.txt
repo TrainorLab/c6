@@ -1,0 +1,33 @@
+Running such a massive operation as offering a consellation of computing nodes to thousands of users across Canada is terribly complicated and there's a potential for inefficiencies. One source of inefficiency would be if every user had to install and compile their system from scrtach using whatever software they find. Instead of this, Compute Canada offers you a lot of checked, pre-compiled local repositories and modules for the frequently used packages. Some links to read about the availability of python and tensorflow on the nodes. For example, you cannot rely on conda :o.
+
+https://docs.computecanada.ca/wiki/Python
+https://docs.computecanada.ca/wiki/TensorFlow
+
+The downside of this is that you cannot have just any combination of packages that you could on your personal computer. This is why I struggled a lot initially to find a matching and mutually functional combination of all the prerequisites for deeplabcut. Eventually, I got to this issue, https://github.com/DeepLabCut/DeepLabCut/issues/1403, and used the suggested version of deeplabcut which did the trick for me.
+
+Let's get started. First, make a virtual environment called DLC, like in conda, but using a different library. Then activate it.
+
+virtualenv --no-download DLC
+source DLC/bin/activate
+
+Now, you'll be installing a bunch of packages. Just relying on pip to figure out its dependencies ('pip install deeplabcut') didn't do the trick because there were just way too many options. I started with some packages that I knew would work and left the critical ones for the end.
+
+pip install --no-index jupyter ffmpeg
+pip install jupyter-contrib_nbextensions
+pip install six==1.15.0 --no-index
+pip install pyparsing==2.4.7 --no-index
+pip install statsmodels==0.12.2 --no-index
+pip install numpy==1.19.2 pandas
+
+pip install tensorflow==2.5.0
+pip install deeplabcut==2.2rc3
+pip install -U numpy
+
+Somewhere along the way I got tensorflow 2.5.0+computecanada requires numpy~=1.19.2, but you have numpy 1.21.0+computecanada which is incompatible. Amazingly, the trick was to just ignore this warning which was sufficient to have a functioning system.
+
+Make sure that the node can run a job in the python environment and the tensorflow module with GPU support. Use the example tensorflow-test.sh script to pass a "job" to the node, pointing to the python script that has the actual computations that you need.
+sbatch ~/c6/installation/tensorflow-test.sh
+The example script has a field for an email address that will receive updates about the process.
+
+Check the status of the job with 'squeue -u dobri2' and the output with 'cat gra....out' where the gra...out file is a text file saved during and/or at the end of the job. It will contain relevant error messages if something fails.
+
