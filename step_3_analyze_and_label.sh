@@ -10,5 +10,5 @@
 
 module load cuda cudnn 
 source ~/DLC/bin/activate
-cd ~/project/def-ljt/dobri2/dodo_sample2/stepclap-2021-09-20/
-python  ~/c6/step_3_analyze_and_label.py
+cd ~/stepclap-CC-2021-09-20/
+python ~/c6/step_3_analyze_and_label.py
