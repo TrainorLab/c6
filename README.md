@@ -30,7 +30,9 @@ and their periodicially updated output, if any. If the script inside the job is 
 Once step 3 is complete, you should have the intersting files in the 'videos' folder. Copy it to your computer with something like the following, issued from the shell of your computer (not the cluster). Important! The slash matters. With the slash, scp copies INSIDE the given folder. Without the slash, scp REPLACES the given folder.
 >scp -r dobri2@graham.computecanada.ca:~/stepclap-CC-2021-09-20/videos my_project_folder/
 
-That's it, this stage of the journey is complete. Now you need to pull the timeseries data from the .h5 or .pickle files and analyze that as you would analyze mocap recordings.
+That's it, this stage of the journey is complete. The outcome of this looks something like the figures and data files in the 'sample videos' folder. Also check the videos with added markers in https://mcmasteru365-my.sharepoint.com/:f:/g/personal/dotovd_mcmaster_ca/Eh4XyfwWXUxEq2_nF9Y7dxIB0_9anhG4n0PS01VOtZl-Og?e=a6PDgv.
+
+Now you need to pull the timeseries data from the data files and analyze them as you would analyze mocap recordings.
 
 ===
 
