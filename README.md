@@ -32,7 +32,7 @@ Once step 3 is complete, you should have the intersting files in the 'videos' fo
 
 That's it, this stage of the journey is complete. Now you need to pull the timeseries data from the .h5 or .pickle files and analyze that as you would analyze mocap recordings.
 
-~~~
+===
 
 Some notes on installation, usage, and hardware.
 
