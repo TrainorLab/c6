@@ -7,12 +7,14 @@ The downside of this is that you cannot have just any combination of packages th
 
 Let's get started. First, make a virtual environment called DLC, like in conda, but using a different library. Then activate it.
 
+module load python/3.8.10 # (or 3.8.8?)
 virtualenv --no-download DLC
 source DLC/bin/activate
 
 Now, you'll be installing a bunch of packages. Just relying on pip to figure out its dependencies ('pip install deeplabcut') didn't do the trick because there were just way too many options. I started with some packages that I knew would work and left the critical ones for the end.
 
-pip install --no-index jupyter ffmpeg
+pip install --no-index jupyter 
+pip install ffmpeg
 pip install jupyter-contrib_nbextensions
 pip install six==1.15.0 --no-index
 pip install pyparsing==2.4.7 --no-index
