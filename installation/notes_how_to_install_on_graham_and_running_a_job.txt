@@ -33,3 +33,6 @@ The example script has a field for an email address that will receive updates ab
 
 Check the status of the job with 'squeue -u dobri2' and the output with 'cat gra....out' where the gra...out file is a text file saved during and/or at the end of the job. It will contain relevant error messages if something fails.
 
+In one case we had to manually place the pre-trained network that dlc was trying but failing to download from the tensorflow server.
+curl http://download.tensorflow.org/models/resnet_v1_50_2016_08_28.tar.gz | tar xvz
+mv resnet_v1_50.ckpt DLC/lib/python3.8/site-packages/deeplabcut/pose_estimation_tensorflow/models/pretrained/
